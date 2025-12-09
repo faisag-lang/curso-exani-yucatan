@@ -30,8 +30,33 @@ def conectar_google_sheets():
         st.error(f"Error al conectar con Google Sheets: {e}")
         return None
 
-def registrar_o_login(nombre, escuela, grupo):
-    """Registra al usuario en la hoja 'Usuarios' si no existe."""
+def registrar_usuario(nombre, escuela, grupo, password):
+    """Registra un nuevo usuario con contraseña."""
+    sh = conectar_google_sheets()
+    if not sh: return None, "Error de conexión"
+    
+    worksheet = sh.worksheet("Usuarios")
+    data = worksheet.get_all_records()
+    df = pd.DataFrame(data)
+    
+    nombre = nombre.strip().upper()
+    password = password.strip()
+    
+    # Verificar si ya existe
+    if not df.empty and nombre in df['nombre_completo'].values:
+        return None, "El usuario ya existe. Por favor ve a la pestaña 'Ingresar'."
+    
+    # Crear nuevo
+    fecha_hoy = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    nuevo_id = 1 if df.empty else df['id'].max() + 1
+    # Nota: Guardamos password en texto plano por simplicidad educativa. 
+    # En apps comerciales se debe encriptar.
+    nuevo_usuario = [int(nuevo_id), nombre, escuela, grupo, fecha_hoy, password]
+    worksheet.append_row(nuevo_usuario)
+    return nuevo_id, "Registro exitoso"
+
+def autenticar_usuario(nombre, password):
+    """Verifica credenciales y devuelve el ID del usuario."""
     sh = conectar_google_sheets()
     if not sh: return None
     
@@ -39,19 +64,33 @@ def registrar_o_login(nombre, escuela, grupo):
     data = worksheet.get_all_records()
     df = pd.DataFrame(data)
     
-    fecha_hoy = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     nombre = nombre.strip().upper()
+    password = password.strip()
     
-    # Verificar si el usuario ya existe
-    if not df.empty and nombre in df['nombre_completo'].values:
-        usuario_row = df[df['nombre_completo'] == nombre].iloc[0]
-        return usuario_row['id'], nombre
-    else:
-        # Generar nuevo ID
-        nuevo_id = 1 if df.empty else df['id'].max() + 1
-        nuevo_usuario = [int(nuevo_id), nombre, escuela, grupo, fecha_hoy]
-        worksheet.append_row(nuevo_usuario)
-        return nuevo_id, nombre
+    if df.empty: return None
+    
+    # Buscar coincidencia exacta de Nombre y Contraseña
+    usuario = df[(df['nombre_completo'] == nombre) & (df['password'].astype(str) == password)]
+    
+    if not usuario.empty:
+        return int(usuario.iloc[0]['id'])
+    return None
+
+def obtener_sesiones_completadas(usuario_id):
+    """Recupera qué sesiones ya terminó el alumno."""
+    sh = conectar_google_sheets()
+    if not sh: return []
+    
+    worksheet = sh.worksheet("Progreso")
+    data = worksheet.get_all_records()
+    df = pd.DataFrame(data)
+    
+    if df.empty: return []
+    
+    # Filtrar por usuario y criterio de aprobado (ej. > 60% aciertos si quisieras filtrar)
+    # Por ahora devolvemos todas las que haya intentado
+    mis_sesiones = df[df['usuario_id'] == usuario_id]['sesion_id'].unique().tolist()
+    return mis_sesiones
 
 def guardar_progreso_sesion(usuario_id, sesion_id, puntaje, total):
     """Guarda el intento en la hoja 'Progreso'."""
@@ -454,37 +493,109 @@ def main():
 
     modo = st.sidebar.radio("Navegación", ["Estudiante", "Docente (Admin)"])
 
-    if modo == "Estudiante":
+if modo == "Estudiante":
         st.title("🎓 Preparación para Bachillerato")
         
+        # Si NO está logueado, mostrar pestañas de Ingreso/Registro
         if 'usuario_id' not in st.session_state:
-            with st.form("login_form"):
-                st.write("### Identificación")
-                nombre = st.text_input("Nombre Completo:")
-                col1, col2 = st.columns(2)
-                escuela = col1.text_input("Escuela:")
-                grupo = col2.text_input("Grupo:")
-                submit = st.form_submit_button("Ingresar y Guardar")
-                
-                if submit and nombre:
-                    with st.spinner("Conectando con la base de datos..."):
-                        uid, uname = registrar_o_login(nombre, escuela, grupo)
-                        st.session_state['usuario_id'] = uid
-                        st.session_state['usuario_nombre'] = uname
-                        st.rerun()
-        else:
-            st.success(f"Hola, **{st.session_state['usuario_nombre']}**. Tu progreso se guarda automáticamente en la nube.")
+            tab_login, tab_registro = st.tabs(["🔐 Ingresar (Ya tengo cuenta)", "📝 Registrarse (Soy nuevo)"])
             
-            if st.sidebar.button("Cerrar Sesión"):
-                del st.session_state['usuario_id']
-                st.rerun()
-            
-            # Selector de sesión
-            lista_sesiones = list(CONTENIDO_CURSO.keys())
-            sesion_seleccionada = st.selectbox("Elige una sesión:", lista_sesiones, format_func=lambda x: CONTENIDO_CURSO[x]['titulo'])
-            
-            mostrar_sesion_estudio(st.session_state['usuario_id'], sesion_seleccionada)
+            # --- PESTAÑA 1: LOGIN ---
+            with tab_login:
+                with st.form("login_form"):
+                    st.write("Si ya te registraste antes, entra aquí:")
+                    login_nombre = st.text_input("Tu Nombre Completo:")
+                    login_pass = st.text_input("Tu Contraseña:", type="password")
+                    btn_ingresar = st.form_submit_button("Entrar y Continuar")
+                    
+                    if btn_ingresar:
+                        if login_nombre and login_pass:
+                            with st.spinner("Buscando tu historial..."):
+                                uid = autenticar_usuario(login_nombre, login_pass)
+                                if uid:
+                                    st.session_state['usuario_id'] = uid
+                                    st.session_state['usuario_nombre'] = login_nombre.strip().upper()
+                                    st.success("¡Bienvenido de nuevo!")
+                                    st.rerun()
+                                else:
+                                    st.error("Nombre o contraseña incorrectos.")
+                        else:
+                            st.warning("Por favor llena ambos campos.")
 
+            # --- PESTAÑA 2: REGISTRO ---
+            with tab_registro:
+                with st.form("registro_form"):
+                    st.write("Crea tu cuenta para guardar tu avance:")
+                    reg_nombre = st.text_input("Nombre Completo (Apellidos y Nombres):")
+                    col1, col2 = st.columns(2)
+                    reg_escuela = col1.text_input("Escuela:")
+                    reg_grupo = col2.text_input("Grupo:")
+                    reg_pass = st.text_input("Crea una contraseña secreta:", type="password")
+                    st.caption("⚠️ ¡No olvides tu contraseña! La necesitarás mañana.")
+                    
+                    btn_registrar = st.form_submit_button("Crear Cuenta")
+                    
+                    if btn_registrar:
+                        if reg_nombre and reg_pass:
+                            with st.spinner("Creando tu perfil..."):
+                                uid, mensaje = registrar_usuario(reg_nombre, reg_escuela, reg_grupo, reg_pass)
+                                if uid:
+                                    st.session_state['usuario_id'] = uid
+                                    st.session_state['usuario_nombre'] = reg_nombre.strip().upper()
+                                    st.success("¡Registro exitoso!")
+                                    st.rerun()
+                                else:
+                                    st.error(mensaje)
+                        else:
+                            st.warning("El nombre y la contraseña son obligatorios.")
+
+        # --- SI YA ESTÁ LOGUEADO (DASHBOARD DEL ALUMNO) ---
+        else:
+            nombre_alumno = st.session_state['usuario_nombre']
+            uid = st.session_state['usuario_id']
+            
+            # Barra superior personalizada
+            col_info, col_logout = st.columns([4, 1])
+            with col_info:
+                st.info(f"👤 Alumno: **{nombre_alumno}** | 📅 Hoy es: {datetime.now().strftime('%d/%m/%Y')}")
+            with col_logout:
+                if st.button("Cerrar Sesión"):
+                    del st.session_state['usuario_id']
+                    del st.session_state['usuario_nombre']
+                    st.rerun()
+
+            # Recuperar avance real desde Google Sheets
+            sesiones_hechas = obtener_sesiones_completadas(uid)
+            progreso_pct = len(sesiones_hechas) / len(CONTENIDO_CURSO) if len(CONTENIDO_CURSO) > 0 else 0
+            
+            st.progress(progreso_pct, text=f"Tu avance general: {len(sesiones_hechas)} de {len(CONTENIDO_CURSO)} sesiones completadas.")
+
+            st.divider()
+            
+            # Selector inteligente de sesión
+            lista_sesiones = list(CONTENIDO_CURSO.keys())
+            
+            # Determinar cuál es la siguiente sesión disponible
+            indice_sugerido = 0
+            for i, sesion in enumerate(lista_sesiones):
+                if sesion not in sesiones_hechas:
+                    indice_sugerido = i
+                    break
+            
+            st.write("### 📚 Menú de Sesiones")
+            sesion_seleccionada = st.selectbox(
+                "Selecciona una sesión para trabajar:", 
+                lista_sesiones, 
+                index=indice_sugerido, # Autoselecciona la siguiente pendiente
+                format_func=lambda x: ("✅ " if x in sesiones_hechas else "🔲 ") + CONTENIDO_CURSO[x]['titulo']
+            )
+            
+            # Lógica de Bloqueo (Opcional: Descomentar si quieres forzar orden)
+            # if indice_sugerido < lista_sesiones.index(sesion_seleccionada):
+            #    st.warning("🚫 No puedes saltarte sesiones. Por favor completa las anteriores primero.")
+            # else:
+            mostrar_sesion_estudio(uid, sesion_seleccionada)
+            
     elif modo == "Docente (Admin)":
         st.title("👨‍🏫 Panel de Control (Google Sheets)")
         password = st.sidebar.text_input("Contraseña", type="password")
@@ -553,5 +664,6 @@ def mostrar_sesion_estudio(uid, sesion_key):
 if __name__ == "__main__":
 
     main()
+
 
 
