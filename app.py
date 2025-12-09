@@ -595,7 +595,7 @@ if modo == "Estudiante":
             #    st.warning("🚫 No puedes saltarte sesiones. Por favor completa las anteriores primero.")
             # else:
             mostrar_sesion_estudio(uid, sesion_seleccionada)
-            
+
 elif modo == "Docente (Admin)":
         st.title("👨‍🏫 Panel de Control (Google Sheets)")
         password = st.sidebar.text_input("Contraseña", type="password")
@@ -664,6 +664,7 @@ def mostrar_sesion_estudio(uid, sesion_key):
 if __name__ == "__main__":
 
     main()
+
 
 
 
