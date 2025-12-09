@@ -474,6 +474,202 @@ CONTENIDO_CURSO = {
                 "explicacion": "5/15 = 1/3. Entonces (P-1)/(P+1) debe ser 1/3. 3(P-1) = 1(P+1) -> 3P-3 = P+1 -> 2P=4 -> P=2."
             }
         ]
+    },
+# =================================================================
+    # SESIÓN 5: RECTA NUMÉRICA Y UNIDADES
+    # =================================================================
+    "sesion_5_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 5: Recta Numérica y Medición",
+        "teoria": """
+        ### [cite_start]1. La Recta Numérica [cite: 578-583]
+        Es una línea que contiene todos los números reales. 
+        * **Orden:** Los números a la derecha son mayores.
+        * **Decimales:** Se ordenan comparando cifra por cifra (entero, décima, centésima). 
+          * *Ejemplo:* 19.24 es mayor que 18.05.
+
+        ### [cite_start]2. Unidades de Medición [cite: 615-630]
+        * **Masa (Peso):** Unidad base: Gramo (g). (Kg = 1000g).
+        * **Longitud:** Unidad base: Metro (m). (Km = 1000m).
+        * **Capacidad:** Unidad base: Litro (L).
+        * **Tiempo:** Hora, minuto, segundo.
+        * **Temperatura:** Grados Celsius, Fahrenheit, Kelvin.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "Ordena de mayor a menor: 19.24, 18.05, 17.59, 18.4",
+                "opciones": ["19.24, 18.4, 18.05, 17.59", "19.24, 18.05, 18.4, 17.59", "17.59, 18.05, 18.4, 19.24"],
+                "correcta": "19.24, 18.4, 18.05, 17.59",
+                "explicacion": "Primero va el entero mayor (19). Luego los de 18: comparamos decimales, 18.4 (que es 18.40) es mayor que 18.05. Al final 17.59."
+            },
+            {
+                "pregunta": "¿Qué unidad usarías para medir la distancia entre Toluca y Puebla (155 unidades)?",
+                "opciones": ["Metros", "Kilómetros", "Centímetros"],
+                "correcta": "Kilómetros",
+                "explicacion": "Las distancias geográficas largas se miden en Kilómetros (km)."
+            },
+            {
+                "pregunta": "Ubica el número racional entre 1 y 2 en la recta numérica:",
+                "opciones": ["0.5", "1.5", "2.5"],
+                "correcta": "1.5",
+                "explicacion": "1.5 es mayor que 1 y menor que 2. (0.5 es menor que 1, y 2.5 es mayor que 2)."
+            },
+            {
+                "pregunta": "Sofía midió la mesa y obtuvo 165 unidades. ¿Qué unidad usó?",
+                "opciones": ["Metros", "Centímetros", "Kilómetros"],
+                "correcta": "Centímetros",
+                "explicacion": "165 metros sería un edificio. 165 km una carretera. 165 cm (1.65m) es lógico para una mesa."
+            },
+            {
+                "pregunta": "Rubén trabaja 6 horas diarias por 5 días (30 horas). ¿A cuántos minutos equivale?",
+                "opciones": ["1800 min", "300 min", "1200 min"],
+                "correcta": "1800 min",
+                "explicacion": "30 horas x 60 minutos = 1800 minutos."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 6: LENGUAJE ALGEBRAICO
+    # =================================================================
+    "sesion_6_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 6: Lenguaje Algebraico",
+        "teoria": """
+        ### [cite_start]1. Conceptos Básicos [cite: 749-770]
+        * **Variable (Incógnita):** Letra (x, y) que representa un valor desconocido.
+        * **Coeficiente:** Número que multiplica a la variable (ej: en **2x**, el 2 es coeficiente).
+        * **Términos Semejantes:** Tienen la misma letra y exponente (ej: 5x y 3x).
+
+        ### [cite_start]2. Traducción al Álgebra [cite: 798-800]
+        * "Un número aumentado en 5": **x + 5**
+        * "El doble de un número": **2x**
+        * "La diferencia de dos números": **x - y**
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "Traduce: 'Paulina tiene 10 años menos que el doble de la edad de Carlos (x)'.",
+                "opciones": ["x - 10", "2x - 10", "10 - 2x"],
+                "correcta": "2x - 10",
+                "explicacion": "'Doble de Carlos' es 2x. '10 años menos' significa restar 10 al final. Orden correcto: 2x - 10."
+            },
+            {
+                "pregunta": "Simplifica: 5x² - 4x² - 7x²",
+                "opciones": ["-6x²", "6x²", "16x²"],
+                "correcta": "-6x²",
+                "explicacion": "Son términos semejantes. Operamos coeficientes: 5 - 4 - 7 = 1 - 7 = -6. Resultado: -6x²."
+            },
+            {
+                "pregunta": "Ecuación para: 'La suma de las edades de Juan (x) y Luis es 84. Luis tiene 8 años menos que Juan'.",
+                "opciones": ["x + (x - 8) = 84", "x - 8 = 84", "2x + 8 = 84"],
+                "correcta": "x + (x - 8) = 84",
+                "explicacion": "Juan = x. Luis = x - 8. La suma de ambos debe dar 84."
+            },
+            {
+                "pregunta": "Traduce: 'El cuadrado de un número más 100'.",
+                "opciones": ["2x + 100", "x² + 100", "(x+100)²"],
+                "correcta": "x² + 100",
+                "explicacion": "'Cuadrado' es potencia 2 (x²). 'Más 100' es suma simple."
+            },
+            {
+                "pregunta": "Don Manuel da a Pedro $8 más que a Luis (x). ¿Cómo se expresa lo de Pedro?",
+                "opciones": ["x - 8", "8x", "x + 8"],
+                "correcta": "x + 8",
+                "explicacion": "Si Luis es x, y Pedro recibe 'más', se suma la cantidad: x + 8."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 7: PROBLEMAS DE ECUACIONES
+    # =================================================================
+    "sesion_7_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 7: Problemas de Ecuaciones Lineales",
+        "teoria": """
+        ### [cite_start]Resolución de Problemas [cite: 896-902]
+        Pasos clave:
+        1. **Identificar la incógnita (x):** ¿Qué me piden buscar?
+        2. **Plantear la ecuación:** Traducir el texto a números y letras.
+        3. **Despejar x:** Mover términos (suma pasa restando, multiplica pasa dividiendo).
+        4. **Comprobar:** Sustituir el valor hallado en el problema original.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "¿Cuánto mide una cuerda si sus tres cuartas partes miden 200m?",
+                "opciones": ["266.66m", "300m", "150m"],
+                "correcta": "266.66m",
+                "explicacion": "Planteamiento: (3/4)x = 200. Despeje: x = (200 * 4) / 3 = 800 / 3 = 266.66."
+            },
+            {
+                "pregunta": "La suma de tres números consecutivos es 219. ¿Cuál es el primero?",
+                "opciones": ["72", "73", "74"],
+                "correcta": "72",
+                "explicacion": "x + (x+1) + (x+2) = 219 -> 3x + 3 = 219 -> 3x = 216 -> x = 72."
+            },
+            {
+                "pregunta": "Si al doble de un número le sumas 8 es igual a 30. ¿Cuál es el número?",
+                "opciones": ["11", "12", "13"],
+                "correcta": "11",
+                "explicacion": "2x + 8 = 30 -> 2x = 22 -> x = 11."
+            },
+            {
+                "pregunta": "Vicente gasta 21 euros en pantalón y camisa. La camisa cuesta 2/5 del pantalón. ¿Precio pantalón?",
+                "opciones": ["15", "16", "20"],
+                "correcta": "15",
+                "explicacion": "Pantalón=x. Camisa=2/5x. x + 2/5x = 21 -> 7/5x = 21 -> x = (21*5)/7 = 15."
+            },
+            {
+                "pregunta": "Un padre tiene 35 años y su hijo 5. ¿En cuántos años la edad del padre será el triple del hijo?",
+                "opciones": ["10 años", "5 años", "15 años"],
+                "correcta": "10 años",
+                "explicacion": "Probando 10 años: Padre=45, Hijo=15. 45 es el triple de 15. Ecuación: 35+x = 3(5+x)."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 8: SISTEMAS DE ECUACIONES
+    # =================================================================
+    "sesion_8_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 8: Sistemas de Ecuaciones",
+        "teoria": """
+        ### [cite_start]Sistemas de Ecuaciones 2x2 [cite: 994-1003]
+        Se usan cuando tenemos dos incógnitas y dos condiciones diferentes.
+        * **Métodos de solución:** Suma y Resta (Reducción), Sustitución o Igualación.
+        * **Ejemplo clásico:** Boletos de adulto y niño.
+          1. Ecuación de cantidad: Adultos + Niños = Total Personas.
+          2. Ecuación de dinero: (PrecioA * A) + (PrecioN * N) = Total Dinero.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "En un teatro hay 800 personas. Recaudación $21,125. Adulto $40, Niño $15. ¿Cuántos niños hay?",
+                "opciones": ["435", "365", "525"],
+                "correcta": "435",
+                "explicacion": "A+N=800 y 40A+15N=21125. Despejando A=800-N y sustituyendo: 40(800-N)+15N=21125. -25N = -10875 -> N=435."
+            },
+            {
+                "pregunta": "En una granja hay cerdos y patos. Cabezas: 52, Patas: 170. ¿Cuántos cerdos?",
+                "opciones": ["35", "33", "20"],
+                "correcta": "33",
+                "explicacion": "C+P=52 y 4C+2P=170. Multiplicamos primera por -2: -2C-2P=-104. Sumamos: 2C=66 -> C=33."
+            },
+            {
+                "pregunta": "Si Patricia le da a Julissa $300, tienen lo mismo. Si Julissa le da a Patricia $300, Patricia tiene el doble. ¿Cuánto tiene Patricia?",
+                "opciones": ["$2100", "$1500", "$900"],
+                "correcta": "$2100",
+                "explicacion": "P-300 = J+300. P+300 = 2(J-300). Resolviendo el sistema obtenemos P=2100."
+            },
+            {
+                "pregunta": "Estacionamiento: 83 vehículos (coches y motos). 256 ruedas. ¿Cuántos coches?",
+                "opciones": ["45", "38", "50"],
+                "correcta": "45",
+                "explicacion": "C+M=83, 4C+2M=256. -2C-2M=-166. Restando queda 2C=90 -> C=45."
+            },
+            {
+                "pregunta": "Un padre plantea 20 problemas. Paga $15 por acierto, cobra $5 por fallo. La hija recibe $240. ¿Cuántos falló?",
+                "opciones": ["3", "5", "6"],
+                "correcta": "3",
+                "explicacion": "A+F=20. 15A - 5F = 240. Resolviendo, A=17, F=3."
+            }
+        ]
     }
     # COPIA Y PEGA AQUÍ LAS DEMÁS SESIONES
 }
@@ -662,6 +858,7 @@ def mostrar_sesion_estudio(uid, sesion_key):
 
 if __name__ == "__main__":
     main()
+
 
 
 
