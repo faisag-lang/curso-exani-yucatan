@@ -89,7 +89,6 @@ def obtener_historial_progreso():
 # Reemplaza todo el diccionario CONTENIDO_CURSO con esto:
 
 CONTENIDO_CURSO = {
-CONTENIDO_CURSO = {
     # =================================================================
     # SESIÓN 1: CONCEPTOS BÁSICOS
     # =================================================================
@@ -554,4 +553,5 @@ def mostrar_sesion_estudio(uid, sesion_key):
 if __name__ == "__main__":
 
     main()
+
 
