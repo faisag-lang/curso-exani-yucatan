@@ -486,14 +486,16 @@ def main():
     st.sidebar.image("https://cdn-icons-png.flaticon.com/512/2991/2991148.png", width=100)
     st.sidebar.title("Plataforma EXANI-I")
     
-    # Verificar secretos antes de iniciar
+    # Verificar secretos
     if "gcp_service_account" not in st.secrets:
         st.error("⚠️ No se encontraron las credenciales de Google. Configura el archivo .streamlit/secrets.toml")
         return
 
+    # --- AQUÍ SE DEFINE LA VARIABLE 'modo' ---
     modo = st.sidebar.radio("Navegación", ["Estudiante", "Docente (Admin)"])
 
-if modo == "Estudiante":
+    # ---------------- MODO ESTUDIANTE ----------------
+    if modo == "Estudiante":
         st.title("🎓 Preparación para Bachillerato")
         
         # Si NO está logueado, mostrar pestañas de Ingreso/Registro
@@ -586,17 +588,14 @@ if modo == "Estudiante":
             sesion_seleccionada = st.selectbox(
                 "Selecciona una sesión para trabajar:", 
                 lista_sesiones, 
-                index=indice_sugerido, # Autoselecciona la siguiente pendiente
+                index=indice_sugerido, 
                 format_func=lambda x: ("✅ " if x in sesiones_hechas else "🔲 ") + CONTENIDO_CURSO[x]['titulo']
             )
             
-            # Lógica de Bloqueo (Opcional: Descomentar si quieres forzar orden)
-            # if indice_sugerido < lista_sesiones.index(sesion_seleccionada):
-            #    st.warning("🚫 No puedes saltarte sesiones. Por favor completa las anteriores primero.")
-            # else:
             mostrar_sesion_estudio(uid, sesion_seleccionada)
 
-elif modo == "Docente (Admin)":
+    # ---------------- MODO DOCENTE ----------------
+    elif modo == "Docente (Admin)":
         st.title("👨‍🏫 Panel de Control (Google Sheets)")
         password = st.sidebar.text_input("Contraseña", type="password")
         
@@ -607,19 +606,17 @@ elif modo == "Docente (Admin)":
             df = obtener_historial_progreso()
             
             if not df.empty:
-                # Métricas rápidas
                 st.metric("Total de Intentos Registrados", len(df))
-                
-                # Tabla general
                 st.subheader("Bitácora de Actividad")
                 st.dataframe(df[['nombre_completo', 'grupo', 'sesion_id', 'puntaje', 'fecha_intento']].sort_values('fecha_intento', ascending=False))
                 
-                # Análisis por alumno
                 st.subheader("Análisis por Alumno")
-                alumno = st.selectbox("Selecciona un alumno:", df['nombre_completo'].unique())
-                df_alumno = df[df['nombre_completo'] == alumno]
-                st.write(f"Intentos de **{alumno}**:")
-                st.table(df_alumno[['sesion_id', 'puntaje', 'fecha_intento']])
+                lista_alumnos = df['nombre_completo'].unique()
+                alumno = st.selectbox("Selecciona un alumno:", lista_alumnos)
+                if alumno:
+                    df_alumno = df[df['nombre_completo'] == alumno]
+                    st.write(f"Intentos de **{alumno}**:")
+                    st.table(df_alumno[['sesion_id', 'puntaje', 'fecha_intento']])
             else:
                 st.info("Aún no hay datos registrados en la hoja de 'Progreso'.")
 
@@ -660,9 +657,10 @@ def mostrar_sesion_estudio(uid, sesion_key):
             with st.spinner("Guardando en la nube..."):
                 guardar_progreso_sesion(uid, sesion_key, puntaje, total)
                 st.toast("¡Progreso guardado en Google Drive!", icon="☁️")
+                # Forzar recarga para actualizar barra de progreso
+                # st.rerun() 
 
 if __name__ == "__main__":
-
     main()
 
 
