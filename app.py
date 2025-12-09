@@ -89,19 +89,20 @@ def obtener_historial_progreso():
 # Reemplaza todo el diccionario CONTENIDO_CURSO con esto:
 
 CONTENIDO_CURSO = {
+CONTENIDO_CURSO = {
     # =================================================================
     # SESIÓN 1: CONCEPTOS BÁSICOS
     # =================================================================
     "sesion_1_mat": {
         "titulo": "Pensamiento Matemático - Sesión 1: Conceptos básicos de aritmética",
         "teoria": """
-        ### [cite_start]1. Números Primos y Compuestos [cite: 25-38]
+        ### 1. Números Primos y Compuestos
         * **Números Primos:** Son aquellos divisibles únicamente entre dos números: ellos mismos y la unidad (1).
           * *Ejemplos:* 2, 3, 5, 7, 11, 13, 17, 19, 23, 29...
         * **Números Compuestos:** Son aquellos que tienen más de dos divisores. Se pueden expresar como la multiplicación de 2 o más primos.
           * *Ejemplos:* 4, 6, 8, 9, 10, 12... (El 9 es divisible entre 1, 3 y 9).
 
-        ### [cite_start]2. Criterios de Divisibilidad [cite: 41-59]
+        ### 2. Criterios de Divisibilidad
         Reglas para saber si un número es divisible por otro sin hacer la división:
         * **Divisible por 2:** Si termina en cero o cifra par (0, 2, 4, 6, 8).
         * **Divisible por 3:** Si la suma de sus dígitos es múltiplo de 3 (Ej: 102 -> 1+0+2=3).
@@ -111,7 +112,7 @@ CONTENIDO_CURSO = {
         * **Divisible por 10:** Si su último dígito es cero.
         """,
         "ejercicios": [
-            # --- EJERCICIOS DE PRÁCTICA (Basados en PDF pág. 4-6) ---
+            # --- EJERCICIOS DE PRÁCTICA ---
             {
                 "pregunta": "Clasifica el número 71:",
                 "opciones": ["Primo", "Compuesto", "Par"],
@@ -142,7 +143,7 @@ CONTENIDO_CURSO = {
                 "correcta": "$12.28",
                 "explicacion": "Es una resta simple: 200.00 - 187.72 = 12.28."
             },
-            # --- TAREA DE LA SESIÓN (Basados en PDF pág. 7) ---
+            # --- TAREA DE LA SESIÓN ---
             {
                 "pregunta": "1. El número 123 se clasifica como...",
                 "opciones": ["Par y primo", "Impar y compuesto", "Impar y primo"],
@@ -182,23 +183,23 @@ CONTENIDO_CURSO = {
     "sesion_2_mat": {
         "titulo": "Pensamiento Matemático - Sesión 2: Jerarquía de Operaciones y MCM/MCD",
         "teoria": """
-        ### [cite_start]1. Jerarquía de Operaciones [cite: 125-129]
+        ### 1. Jerarquía de Operaciones
         Orden estricto para resolver operaciones combinadas:
         1. **Signos de agrupación:** ( ), [ ], { }.
         2. **Raíces y potencias.**
         3. **Multiplicaciones y divisiones** (de izquierda a derecha).
         4. **Sumas y restas.**
 
-        ### [cite_start]2. Mínimo Común Múltiplo (mcm) [cite: 136-141]
+        ### 2. Mínimo Común Múltiplo (mcm)
         Es la cifra más pequeña que es múltiplo común de todos los números del conjunto.
         * *Palabras clave:* "Coincidir", "Repetir", "Mínimo tiempo", "Encontrarse".
 
-        ### [cite_start]3. Máximo Común Divisor (mcd) [cite: 142-146]
+        ### 3. Máximo Común Divisor (mcd)
         Es el mayor número que divide a dos o más números de manera exacta.
         * *Palabras clave:* "Repartir", "Dividir", "Mayor tamaño posible", "Agrupar".
         """,
         "ejercicios": [
-            # --- EJERCICIOS DE PRÁCTICA (Basados en PDF pág. 8-10) ---
+            # --- EJERCICIOS DE PRÁCTICA ---
             {
                 "pregunta": "Resuelve: 4 - 6 ÷ 2 - 8 + 10",
                 "opciones": ["7", "3", "1"],
@@ -229,7 +230,7 @@ CONTENIDO_CURSO = {
                 "correcta": "MCD",
                 "explicacion": "Buscas dividir una cantidad en partes iguales y lo más grandes posible. Esto es Máximo Común Divisor."
             },
-            # --- TAREA DE LA SESIÓN (Basados en PDF pág. 11-12) ---
+            # --- TAREA DE LA SESIÓN ---
             {
                 "pregunta": "1. Resultado de (32-15) x 4 - 8^2",
                 "opciones": ["8", "4", "2"],
@@ -269,23 +270,23 @@ CONTENIDO_CURSO = {
     "sesion_3_mat": {
         "titulo": "Pensamiento Matemático - Sesión 3: Fracciones",
         "teoria": """
-        ### [cite_start]1. Tipos de Fracciones [cite: 220-230]
+        ### 1. Tipos de Fracciones
         * **Propias:** Numerador < Denominador (Ej: 1/2). Valen menos de 1 entero.
         * **Impropias:** Numerador > Denominador (Ej: 5/2). Valen más de 1 entero.
         * **Mixtas:** Entero + Fracción propia (Ej: 1 1/3).
 
-        ### [cite_start]2. Operaciones con Fracciones [cite: 232-239]
+        ### 2. Operaciones con Fracciones
         * **Mismo denominador:** Se suman/restan directos los numeradores.
         * **Diferente denominador:**
             1. Calcular MCM de denominadores.
             2. Dividir MCM entre cada denominador y multiplicar por su numerador.
             3. Sumar/Restar resultados.
 
-        ### [cite_start]3. Fracciones Equivalentes [cite: 244-254]
+        ### 3. Fracciones Equivalentes
         Expresan la misma cantidad (Ej: 1/2 = 2/4). Se obtienen multiplicando o dividiendo numerador y denominador por el mismo número.
         """,
         "ejercicios": [
-            # --- EJERCICIOS DE PRÁCTICA (Basados en PDF pág. 14-15) ---
+            # --- EJERCICIOS DE PRÁCTICA ---
             {
                 "pregunta": "Encuentra una fracción equivalente a 9/12:",
                 "opciones": ["3/4", "4/5", "2/3"],
@@ -316,7 +317,7 @@ CONTENIDO_CURSO = {
                 "correcta": "6/8",
                 "explicacion": "2/6 = 0.33... y 6/8 = 0.75. 6/8 es mayor."
             },
-            # --- TAREA DE LA SESIÓN (Basados en PDF pág. 16) ---
+            # --- TAREA DE LA SESIÓN ---
             {
                 "pregunta": "1. De los animales del zoo, 2/3 son mamíferos y 1/5 aves. ¿Qué fracción representan juntos?",
                 "opciones": ["3/8", "13/15", "1/15"],
@@ -356,23 +357,23 @@ CONTENIDO_CURSO = {
     "sesion_4_mat": {
         "titulo": "Pensamiento Matemático - Sesión 4: Porcentajes, Razones y Proporciones",
         "teoria": """
-        ### [cite_start]1. Porcentajes [cite: 360-371]
+        ### 1. Porcentajes
         El (%) significa "un tanto de 100".
         * 50% = mitad (0.5)
         * 25% = cuarta parte (0.25)
         * **Cálculo:** Multiplica la cantidad por el decimal (Ej: 23% de 500 -> 500 x 0.23).
 
-        ### [cite_start]2. Proporcionalidad Directa [cite: 401-413]
+        ### 2. Proporcionalidad Directa
         Cuando una cantidad aumenta, la otra también en la misma proporción.
         * **Regla de tres:** (Producto cruzado). Si 3 manzanas cuestan $8, ¿12 manzanas? -> (12 x 8) / 3 = 32.
 
-        ### [cite_start]3. Proporcionalidad Inversa [cite: 429-438]
+        ### 3. Proporcionalidad Inversa
         Cuando una cantidad aumenta, la otra disminuye.
         * *Ejemplo:* Trabajadores vs Tiempo. Más trabajadores = Menos tiempo.
         * **Cálculo:** Se multiplica horizontal y se divide. (5 obreros tardan 14 días. ¿10 obreros? -> (5 x 14) / 10 = 7 días).
         """,
         "ejercicios": [
-            # --- EJERCICIOS DE PRÁCTICA (Basados en PDF pág. 17-20) ---
+            # --- EJERCICIOS DE PRÁCTICA ---
             {
                 "pregunta": "Calcula el 25% de 456:",
                 "opciones": ["114", "100", "125"],
@@ -403,7 +404,7 @@ CONTENIDO_CURSO = {
                 "correcta": "20 min",
                 "explicacion": "Cada minuto tira 17L (204/12). 340 ÷ 17 = 20 minutos."
             },
-            # --- TAREA DE LA SESIÓN (Basados en PDF pág. 21) ---
+            # --- TAREA DE LA SESIÓN ---
             {
                 "pregunta": "1. Nueve lápices cuestan $40.50. ¿Cuánto cuestan 4 lápices?",
                 "opciones": ["$16", "$18", "$20"],
@@ -553,3 +554,4 @@ def mostrar_sesion_estudio(uid, sesion_key):
 if __name__ == "__main__":
 
     main()
+
