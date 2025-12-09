@@ -142,7 +142,7 @@ CONTENIDO_CURSO = {
 
         ### 2. Criterios de Divisibilidad
         Reglas para saber si un número es divisible por otro sin hacer la división:
-        * **Divisible por 2:** Si termina en cero o cifra par (0, 2, 4, 6, 8).
+        * **Divisible por 2:** Si termina en cero o cifra par 0, 2, 4, 6, 8 (Ej: 24, 108, 550, 7312).
         * **Divisible por 3:** Si la suma de sus dígitos es múltiplo de 3 (Ej: 102 -> 1+0+2=3).
         * **Divisible por 4:** Si sus dos últimas cifras son ceros o múltiplo de 4.
         * **Divisible por 5:** Si termina en cero o cinco.
@@ -858,6 +858,7 @@ def mostrar_sesion_estudio(uid, sesion_key):
 
 if __name__ == "__main__":
     main()
+
 
 
 
