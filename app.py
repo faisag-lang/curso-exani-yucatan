@@ -670,6 +670,347 @@ CONTENIDO_CURSO = {
                 "explicacion": "A+F=20. 15A - 5F = 240. Resolviendo, A=17, F=3."
             }
         ]
+    },
+    
+    # =================================================================
+    # SESIÓN 9: GEOMETRÍA (ÁREAS Y VOLÚMENES)
+    # =================================================================
+    "sesion_9_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 9: Áreas y Volúmenes",
+        "teoria": """
+        ### 1. Perímetro y Área
+        * **Perímetro (P):** Es la suma de los lados de una figura (el contorno).
+        * **Área (A):** Es la medida de la superficie interior.
+          * *Cuadrado:* L x L
+          * *Rectángulo:* Base x Altura (b x h)
+          * *Triángulo:* (Base x Altura) / 2
+          * *Círculo:* Área = π x r² | Perímetro = π x Diámetro
+
+        ### 2. Volumen
+        Es el espacio que ocupa un cuerpo tridimensional.
+        * **Prismas (Cajas):** Volumen = Área de la base x Altura.
+        * **Cubo:** Lado x Lado x Lado (L³).
+        * **Cilindro:** (π x r²) x h.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "Calcula el área de un triángulo con base de 12 cm y altura de 5 cm.",
+                "opciones": ["30 cm²", "60 cm²", "17 cm²"],
+                "correcta": "30 cm²",
+                "explicacion": "Fórmula: (b x h) / 2. (12 x 5) / 2 = 60 / 2 = 30."
+            },
+            {
+                "pregunta": "Si un cuadrado tiene un perímetro de 36 cm, ¿cuánto mide cada lado?",
+                "opciones": ["9 cm", "6 cm", "12 cm"],
+                "correcta": "9 cm",
+                "explicacion": "El cuadrado tiene 4 lados iguales. 36 ÷ 4 = 9 cm."
+            },
+            {
+                "pregunta": "¿Cuál es el volumen de un cubo que mide 3 metros por lado?",
+                "opciones": ["9 m³", "27 m³", "54 m³"],
+                "correcta": "27 m³",
+                "explicacion": "Volumen cubo = L³. 3 x 3 x 3 = 27."
+            },
+            {
+                "pregunta": "Calcula el área de un círculo cuyo radio mide 4 cm (considera pi=3.14).",
+                "opciones": ["50.24 cm²", "25.12 cm²", "12.56 cm²"],
+                "correcta": "50.24 cm²",
+                "explicacion": "Área = π x r². r² = 4x4 = 16. Entonces 3.14 x 16 = 50.24."
+            },
+            {
+                "pregunta": "Una alberca rectangular mide 10m de largo, 5m de ancho y 2m de profundidad. ¿Cuál es su volumen?",
+                "opciones": ["100 m³", "50 m³", "17 m³"],
+                "correcta": "100 m³",
+                "explicacion": "Volumen prisma = Largo x Ancho x Alto. 10 x 5 x 2 = 100."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. El área de un rectángulo es 48 cm² y su base mide 8 cm. ¿Cuánto mide su altura?",
+                "opciones": ["6 cm", "40 cm", "8 cm"],
+                "correcta": "6 cm",
+                "explicacion": "Área = b x h. 48 = 8 x h. Despejamos h = 48 / 8 = 6."
+            },
+            {
+                "pregunta": "2. ¿Cuántos litros caben en un tanque cúbico de 2 metros de lado? (Recuerda: 1m³ = 1000 Litros).",
+                "opciones": ["8000 L", "4000 L", "2000 L"],
+                "correcta": "8000 L",
+                "explicacion": "Volumen = 2 x 2 x 2 = 8 m³. Como 1 m³ son 1000 litros, son 8000 litros."
+            },
+            {
+                "pregunta": "3. Halla el perímetro de una circunferencia con diámetro de 10 cm (pi=3.14).",
+                "opciones": ["31.4 cm", "78.5 cm", "15.7 cm"],
+                "correcta": "31.4 cm",
+                "explicacion": "Perímetro = π x Diámetro. 3.14 x 10 = 31.4."
+            },
+            {
+                "pregunta": "4. Se quiere pintar una pared de 4m x 3m. Si el bote de pintura rinde 10m², ¿cuántos botes necesito?",
+                "opciones": ["2 botes", "1 bote", "1.5 botes"],
+                "correcta": "2 botes",
+                "explicacion": "Área pared = 12 m². Un bote cubre 10, así que necesito un segundo bote para los 2 m² restantes."
+            },
+            {
+                "pregunta": "5. ¿Cuál es el volumen de un cilindro con base de área 20 cm² y altura de 10 cm?",
+                "opciones": ["200 cm³", "2000 cm³", "30 cm³"],
+                "correcta": "200 cm³",
+                "explicacion": "Volumen = Área Base x Altura. 20 x 10 = 200."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 10: FUNCIONES Y GRÁFICAS
+    # =================================================================
+    "sesion_10_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 10: Modelos Lineales y Cuadráticos",
+        "teoria": """
+        ### Tipos de Funciones
+        * **Función Constante:** La variable dependiente (y) no cambia. Su gráfica es una línea horizontal.
+          * *Ejemplo:* y = 5
+        * **Función Lineal:** Su gráfica es una línea recta inclinada. Tiene la forma **y = mx + b**.
+          * *m:* Pendiente (inclinación). Si es positiva sube, si es negativa baja.
+          * *b:* Intersección (donde cruza al eje vertical).
+        * **Función Cuadrática:** Su gráfica es una curva llamada **Parábola**. Tiene la forma **y = ax² + bx + c**.
+          * Si el término x² es positivo, abre hacia arriba (U).
+          * Si es negativo, abre hacia abajo (∩).
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "¿Qué gráfica representa la ecuación y = 3x - 1?",
+                "opciones": ["Una recta", "Una parábola", "Una hipérbola"],
+                "correcta": "Una recta",
+                "explicacion": "Al tener la variable 'x' con exponente 1 (lineal), su gráfica siempre es una línea recta."
+            },
+            {
+                "pregunta": "Si f(x) = x² - 3, ¿cuánto vale f(2)?",
+                "opciones": ["1", "-1", "4"],
+                "correcta": "1",
+                "explicacion": "Sustituimos x por 2: (2)² - 3 = 4 - 3 = 1."
+            },
+            {
+                "pregunta": "¿Cómo es la gráfica de y = -x² + 2?",
+                "opciones": ["Parábola hacia abajo", "Parábola hacia arriba", "Línea recta"],
+                "correcta": "Parábola hacia abajo",
+                "explicacion": "Es cuadrática (x²), por lo que es parábola. Como el signo de x² es negativo, abre hacia abajo."
+            },
+            {
+                "pregunta": "En la ecuación y = 5x + 2, ¿cuál es el valor de la pendiente?",
+                "opciones": ["5", "2", "x"],
+                "correcta": "5",
+                "explicacion": "En la forma y=mx+b, la pendiente es el número 'm' que acompaña a la x. Aquí es 5."
+            },
+            {
+                "pregunta": "Un taxi cobra $10 el banderazo y $5 por km. ¿Cuál es su modelo?",
+                "opciones": ["y = 5x + 10", "y = 10x + 5", "y = 15x"],
+                "correcta": "y = 5x + 10",
+                "explicacion": "El costo fijo (b) es 10. El costo variable (m) es 5 por cada km (x). y = 5x + 10."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. Evalúa la función f(x) = 2x + 4 cuando x = -3.",
+                "opciones": ["-2", "2", "-10"],
+                "correcta": "-2",
+                "explicacion": "2(-3) + 4 = -6 + 4 = -2."
+            },
+            {
+                "pregunta": "2. ¿Qué ecuación representa una función constante?",
+                "opciones": ["y = 8", "y = x", "y = x + 8"],
+                "correcta": "y = 8",
+                "explicacion": "No tiene variable 'x'. El valor de y siempre es 8, sin importar cuánto valga x."
+            },
+            {
+                "pregunta": "3. ¿En qué punto corta al eje Y la recta y = 3x - 5?",
+                "opciones": ["-5", "3", "5"],
+                "correcta": "-5",
+                "explicacion": "El corte con el eje Y está dado por el término independiente (b). En este caso, -5."
+            },
+            {
+                "pregunta": "4. La trayectoria de un balón lanzado al aire es una:",
+                "opciones": ["Parábola", "Línea Recta", "Circunferencia"],
+                "correcta": "Parábola",
+                "explicacion": "El movimiento de proyectiles bajo la gravedad describe una curva parabólica hacia abajo."
+            },
+            {
+                "pregunta": "5. Si la pendiente de una recta es negativa, la recta:",
+                "opciones": ["Baja de izquierda a derecha", "Sube de izquierda a derecha", "Es horizontal"],
+                "correcta": "Baja de izquierda a derecha",
+                "explicacion": "Pendiente negativa significa que la función es decreciente."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 11: BINOMIOS (PRODUCTOS NOTABLES)
+    # =================================================================
+    "sesion_11_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 11: Binomios y Productos Notables",
+        "teoria": """
+        ### Productos Notables
+        Reglas para multiplicar binomios rápidamente sin hacer toda la operación.
+
+        **1. Binomio al Cuadrado (a + b)²**
+        * Regla: El cuadrado del primero + el doble del primero por el segundo + el cuadrado del segundo.
+        * Fórmula: **a² + 2ab + b²**
+        
+        **2. Binomios Conjugados (a + b)(a - b)**
+        * Son iguales pero con signo contrario en medio.
+        * Regla: El cuadrado del primero MENOS el cuadrado del segundo.
+        * Fórmula: **a² - b²**
+
+        **3. Binomios con Término Común (x + a)(x + b)**
+        * Tienen una letra igual y números distintos.
+        * Regla: Cuadrado del común + (suma de los no comunes) por el común + (multiplicación de los no comunes).
+        * Fórmula: **x² + (a+b)x + ab**
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "Desarrolla el binomio al cuadrado: (x + 3)²",
+                "opciones": ["x² + 6x + 9", "x² + 9", "x² + 3x + 9"],
+                "correcta": "x² + 6x + 9",
+                "explicacion": "1° Cuadrado de x -> x². 2° Doble de x por 3 -> 6x. 3° Cuadrado de 3 -> 9."
+            },
+            {
+                "pregunta": "Resuelve los binomios conjugados: (x + 5)(x - 5)",
+                "opciones": ["x² - 25", "x² + 25", "x² - 10x + 25"],
+                "correcta": "x² - 25",
+                "explicacion": "Es una diferencia de cuadrados. Cuadrado del primero (x²) menos cuadrado del segundo (25)."
+            },
+            {
+                "pregunta": "Desarrolla: (x - 4)²",
+                "opciones": ["x² - 8x + 16", "x² - 16", "x² + 8x - 16"],
+                "correcta": "x² - 8x + 16",
+                "explicacion": "El término medio es negativo porque: 2(x)(-4) = -8x. El último siempre es positivo (-4)²=16."
+            },
+            {
+                "pregunta": "Multiplica: (x + 2)(x + 4) -> Término común",
+                "opciones": ["x² + 6x + 8", "x² + 8x + 6", "x² + 8"],
+                "correcta": "x² + 6x + 8",
+                "explicacion": "Suma de no comunes: 2+4=6 (término medio 6x). Multiplicación: 2x4=8 (término final 8)."
+            },
+            {
+                "pregunta": "Resultado de (2a + 3)²",
+                "opciones": ["4a² + 12a + 9", "4a² + 9", "2a² + 6a + 9"],
+                "correcta": "4a² + 12a + 9",
+                "explicacion": "Cuadrado de 2a es 4a². Doble de (2a)(3) es 12a. Cuadrado de 3 es 9."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. Resultado de (m - 8)(m + 8)",
+                "opciones": ["m² - 64", "m² + 64", "m² - 16m + 64"],
+                "correcta": "m² - 64",
+                "explicacion": "Conjugados: cuadrado del primero menos cuadrado del segundo."
+            },
+            {
+                "pregunta": "2. Desarrolla (x + 10)²",
+                "opciones": ["x² + 20x + 100", "x² + 100", "x² + 10x + 100"],
+                "correcta": "x² + 20x + 100",
+                "explicacion": "Término medio es el doble: 2 * x * 10 = 20x."
+            },
+            {
+                "pregunta": "3. Multiplica (x - 3)(x + 5)",
+                "opciones": ["x² + 2x - 15", "x² - 2x - 15", "x² - 15"],
+                "correcta": "x² + 2x - 15",
+                "explicacion": "Suma de (-3 + 5) = +2. Multiplicación de (-3)(5) = -15."
+            },
+            {
+                "pregunta": "4. ¿Cuál es el término faltante? (x - 6)² = x² ______ + 36",
+                "opciones": ["-12x", "+12x", "-6x"],
+                "correcta": "-12x",
+                "explicacion": "El doble del primero por el segundo: 2(x)(-6) = -12x."
+            },
+            {
+                "pregunta": "5. Resultado de (3x - 1)(3x + 1)",
+                "opciones": ["9x² - 1", "9x² + 1", "3x² - 1"],
+                "correcta": "9x² - 1",
+                "explicacion": "Conjugados. (3x)² = 9x². (1)² = 1. Se restan."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 12: FACTORIZACIÓN
+    # =================================================================
+    "sesion_12_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 12: Factorización",
+        "teoria": """
+        ### Factorización
+        Es el proceso inverso a los productos notables. Consiste en descomponer una expresión algebraica en una multiplicación.
+
+        **1. Factor Común**
+        * Se busca el número y letra que se repite en todos los términos.
+        * *Ejemplo:* 4x² + 8x -> El 4 y la x se repiten -> **4x(x + 2)**.
+
+        **2. Trinomio Cuadrado Perfecto (TCP)**
+        * Viene de un binomio al cuadrado.
+        * Se saca raíz al primero y al último.
+        * *Ejemplo:* x² + 6x + 9 -> Raíces x y 3 -> **(x + 3)²**.
+
+        **3. Trinomio de la forma x² + bx + c**
+        * Buscamos dos números que **multiplicados den c** y **sumados den b**.
+        * *Ejemplo:* x² + 5x + 6 -> (x + 3)(x + 2) porque 3x2=6 y 3+2=5.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "Factoriza: x² + 7x + 10",
+                "opciones": ["(x + 5)(x + 2)", "(x + 10)(x + 1)", "(x - 5)(x - 2)"],
+                "correcta": "(x + 5)(x + 2)",
+                "explicacion": "Buscamos dos números que multiplicados den 10 y sumados 7. Son 5 y 2."
+            },
+            {
+                "pregunta": "Factoriza por término común: 5x² - 15x",
+                "opciones": ["5x(x - 3)", "5(x² - 3x)", "x(5x - 15)"],
+                "correcta": "5x(x - 3)",
+                "explicacion": "El máximo común divisor de 5 y 15 es 5. La letra común es x. Factor: 5x."
+            },
+            {
+                "pregunta": "Factoriza la diferencia de cuadrados: x² - 49",
+                "opciones": ["(x + 7)(x - 7)", "(x - 7)²", "(x + 7)²"],
+                "correcta": "(x + 7)(x - 7)",
+                "explicacion": "Raíz de x² es x. Raíz de 49 es 7. Se ponen conjugados (uno más, uno menos)."
+            },
+            {
+                "pregunta": "Factoriza el TCP: x² - 10x + 25",
+                "opciones": ["(x - 5)²", "(x + 5)²", "(x - 25)(x + 1)"],
+                "correcta": "(x - 5)²",
+                "explicacion": "Raíz de 25 es 5. Como el término medio es negativo, es (x - 5)²."
+            },
+            {
+                "pregunta": "Factoriza: x² - 3x - 10",
+                "opciones": ["(x - 5)(x + 2)", "(x - 10)(x + 1)", "(x + 5)(x - 2)"],
+                "correcta": "(x - 5)(x + 2)",
+                "explicacion": "Multiplicados dan -10 y sumados -3. Los números son -5 y +2."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. ¿Cuál es el factor común de 12a³ + 4a?",
+                "opciones": ["4a", "12a", "a"],
+                "correcta": "4a",
+                "explicacion": "El 4 divide al 12 y al 4. La 'a' está en ambos."
+            },
+            {
+                "pregunta": "2. Factoriza x² - 81",
+                "opciones": ["(x + 9)(x - 9)", "(x - 9)²", "(x + 81)(x - 1)"],
+                "correcta": "(x + 9)(x - 9)",
+                "explicacion": "Es diferencia de cuadrados. Raíz de 81 es 9."
+            },
+            {
+                "pregunta": "3. Factoriza x² + 8x + 12",
+                "opciones": ["(x + 6)(x + 2)", "(x + 4)(x + 3)", "(x + 12)(x + 1)"],
+                "correcta": "(x + 6)(x + 2)",
+                "explicacion": "Dos números que multiplicados den 12 y sumados 8. Son 6 y 2."
+            },
+            {
+                "pregunta": "4. Factoriza x² + 2x + 1",
+                "opciones": ["(x + 1)²", "(x - 1)²", "x(x + 2)"],
+                "correcta": "(x + 1)²",
+                "explicacion": "Es un Trinomio Cuadrado Perfecto. Raíz de 1 es 1. (x+1)²."
+            },
+            {
+                "pregunta": "5. Factoriza x² - x - 20",
+                "opciones": ["(x - 5)(x + 4)", "(x + 5)(x - 4)", "(x - 10)(x + 2)"],
+                "correcta": "(x - 5)(x + 4)",
+                "explicacion": "Multiplicados -20, sumados -1. Números: -5 y +4."
+            }
+        ]
     }
     # COPIA Y PEGA AQUÍ LAS DEMÁS SESIONES
 }
@@ -858,6 +1199,7 @@ def mostrar_sesion_estudio(uid, sesion_key):
 
 if __name__ == "__main__":
     main()
+
 
 
 
