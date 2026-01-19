@@ -1011,6 +1011,497 @@ CONTENIDO_CURSO = {
                 "explicacion": "Multiplicados -20, sumados -1. Números: -5 y +4."
             }
         ]
+    },
+    # =================================================================
+    # SESIÓN 13: RECTAS EN EL PLANO
+    # =================================================================
+    "sesion_13_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 13: Rectas en el Plano",
+        "teoria": """
+        ### La Recta en el Plano Cartesiano
+        Las ecuaciones de primer grado con dos variables (ej. $y = mx + b$) se representan gráficamente como una línea recta.
+        
+        **Elementos clave de la ecuación $y = mx + b$:**
+        * **m (Pendiente):** Indica la inclinación.
+          * Si $m$ es positiva ($2x$), la recta sube (creciente).
+          * Si $m$ es negativa ($-2x$), la recta baja (decreciente).
+        * **b (Ordenada al origen):** Es el punto donde la recta corta al eje Y (vertical).
+          * Ejemplo: En $y = 3x + 4$, la recta cruza el eje Y en el 4 positivo.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "¿Cuál es el punto de intersección con el eje Y de la recta y = -x + 5?",
+                "opciones": ["(5,0)", "(0,5)", "(0,-1)"],
+                "correcta": "(0,5)",
+                "explicacion": "El término independiente (b) es +5, por lo que corta al eje Y en la coordenada (0, 5)."
+            },
+            {
+                "pregunta": "¿Qué gráfica corresponde a y = 2x + 1?",
+                "opciones": ["Una recta que sube y cruza en 1", "Una recta que baja y cruza en 1", "Una recta horizontal"],
+                "correcta": "Una recta que sube y cruza en 1",
+                "explicacion": "La pendiente (2) es positiva, así que sube. La ordenada al origen es 1, así que cruza Y en 1."
+            },
+            {
+                "pregunta": "¿Cuál es la ordenada al origen de la recta y = -2x + 3?",
+                "opciones": ["(3,0)", "(0,3)", "(0,-2)"],
+                "correcta": "(0,3)",
+                "explicacion": "La ordenada al origen es el valor de b, en este caso 3. Coordenada (0,3)."
+            },
+            {
+                "pregunta": "¿Qué representación tiene la ecuación y = 8.5x - 11?",
+                "opciones": ["Recta decreciente", "Recta creciente", "Curva"],
+                "correcta": "Recta creciente",
+                "explicacion": "Como el coeficiente de x (8.5) es positivo, la recta es creciente (va hacia arriba)."
+            },
+            {
+                "pregunta": "Identifica la pendiente en y = -4x + 6",
+                "opciones": ["6", "-4", "4"],
+                "correcta": "-4",
+                "explicacion": "La pendiente es el número que multiplica a la x, en este caso -4."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. ¿Cuál es el punto de intersección de la recta y = 4x + 2 con el eje Y?",
+                "opciones": ["(0,2)", "(2,0)", "(0,4)"],
+                "correcta": "(0,2)",
+                "explicacion": "El valor de b es 2, así que la intersección es (0,2)."
+            },
+            {
+                "pregunta": "2. Si la ecuación es y = -x + 1, ¿dónde corta al eje Y?",
+                "opciones": ["(0,1)", "(1,0)", "(0,-1)"],
+                "correcta": "(0,1)",
+                "explicacion": "Corta en el valor independiente, que es +1."
+            },
+            {
+                "pregunta": "3. ¿Cómo es la gráfica de y = -5x + 1?",
+                "opciones": ["Creciente", "Decreciente", "Horizontal"],
+                "correcta": "Decreciente",
+                "explicacion": "La pendiente es -5 (negativa), por lo tanto la recta va hacia abajo."
+            },
+            {
+                "pregunta": "4. ¿Cuál es la ordenada al origen de y = 15x + 2.5?",
+                "opciones": ["(0, 2.5)", "(2.5, 0)", "(15, 0)"],
+                "correcta": "(0, 2.5)",
+                "explicacion": "Es el término independiente 2.5 en el eje Y."
+            },
+            {
+                "pregunta": "5. La ecuación y = 3x representa una recta que:",
+                "opciones": ["Pasa por el origen (0,0)", "Corta en 3", "Es paralela al eje X"],
+                "correcta": "Pasa por el origen (0,0)",
+                "explicacion": "No tiene término b (b=0), por lo que pasa exactamente por el centro del plano."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 14: PARÁBOLAS
+    # =================================================================
+    "sesion_14_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 14: Parábolas en el plano",
+        "teoria": """
+        ### La Parábola
+        Las ecuaciones cuadráticas (donde la x está al cuadrado: $y = ax^2 + bx + c$) se grafican como una curva llamada **parábola**.
+        
+        **Características principales:**
+        * **Concavidad (Hacia dónde abre):**
+          * Si $x^2$ es positivo ($y = x^2$): Abre hacia **ARRIBA** (forma de U).
+          * Si $x^2$ es negativo ($y = -x^2$): Abre hacia **ABAJO** (forma de montaña).
+        * **Intersección Y:** El término independiente (c) indica dónde corta al eje vertical.
+        * **Intersección X:** Son las soluciones de la ecuación cuando $y=0$ (Raíces).
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "¿Hacia dónde abre la parábola y = -x² + 4?",
+                "opciones": ["Hacia arriba", "Hacia abajo", "Es una recta"],
+                "correcta": "Hacia abajo",
+                "explicacion": "El término cuadrático es negativo (-x²), por lo que abre hacia abajo."
+            },
+            {
+                "pregunta": "¿Cuál es la ordenada al origen de y = 2x² - 11?",
+                "opciones": ["(0, -11)", "(-11, 0)", "(0, 2)"],
+                "correcta": "(0, -11)",
+                "explicacion": "El término independiente es -11, ese es el corte con el eje Y."
+            },
+            {
+                "pregunta": "Identifica uno de los puntos de intersección con el eje X de: y = x² - 16",
+                "opciones": ["x = 4", "x = 16", "x = 8"],
+                "correcta": "x = 4",
+                "explicacion": "Igualamos a 0: x² - 16 = 0 -> x² = 16. La raíz cuadrada de 16 es 4 (y -4)."
+            },
+            {
+                "pregunta": "¿Cómo es la gráfica de y = 5x² + 2?",
+                "opciones": ["U hacia arriba", "U invertida hacia abajo", "Línea recta"],
+                "correcta": "U hacia arriba",
+                "explicacion": "El 5x² es positivo, así que abre hacia arriba."
+            },
+            {
+                "pregunta": "¿Cuál es la ordenada al origen de y = x² - 8x - 4?",
+                "opciones": ["(0, 4)", "(0, -4)", "(-4, 0)"],
+                "correcta": "(0, -4)",
+                "explicacion": "El término sin x es -4."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. ¿Cuál es la ordenada al origen de y = 12x² + 4?",
+                "opciones": ["(0, 4)", "(4, 0)", "(0, 12)"],
+                "correcta": "(0, 4)",
+                "explicacion": "Corta al eje Y en el término independiente +4."
+            },
+            {
+                "pregunta": "2. ¿Hacia dónde abre la gráfica de y = -3x²?",
+                "opciones": ["Arriba", "Abajo", "Derecha"],
+                "correcta": "Abajo",
+                "explicacion": "Coeficiente negativo (-3) indica apertura hacia abajo."
+            },
+            {
+                "pregunta": "3. Puntos donde la parábola y = x² - 9 corta al eje X:",
+                "opciones": ["3 y -3", "9 y -9", "0 y 9"],
+                "correcta": "3 y -3",
+                "explicacion": "x² = 9. Las raíces son +3 y -3."
+            },
+            {
+                "pregunta": "4. La gráfica de y = x² + 2x - 3 corta al eje Y en:",
+                "opciones": ["-3", "2", "1"],
+                "correcta": "-3",
+                "explicacion": "El término independiente es -3."
+            },
+            {
+                "pregunta": "5. Si la parábola tiene vértice en el origen y abre hacia arriba, su ecuación puede ser:",
+                "opciones": ["y = x²", "y = -x²", "y = x + 1"],
+                "correcta": "y = x²",
+                "explicacion": "Es la parábola base positiva."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 15: ÁNGULOS Y CÍRCULO
+    # =================================================================
+    "sesion_15_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 15: Ángulos y Circunferencia",
+        "teoria": """
+        ### Ángulos en Triángulos
+        * La suma de los ángulos internos de **cualquier** triángulo es siempre **180°**.
+        * Ejemplo: Si tienes un triángulo con ángulos de 50° y 60°, el tercero mide: $180 - (50+60) = 70°$.
+
+        ### La Circunferencia
+        * **Elementos:** Radio (del centro a la orilla), Diámetro (cuerda que pasa por el centro, vale 2 radios), Cuerda (une dos puntos), Tangente (toca un solo punto).
+        * **Ángulos en la circunferencia:**
+          * **Ángulo Central:** Tiene el vértice en el centro. Mide **lo mismo** que su arco.
+          * **Ángulo Inscrito:** Tiene el vértice en la orilla del círculo. Mide la **mitad** de su arco.
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "En un triángulo, dos ángulos miden 60° y 40°. ¿Cuánto mide el tercero?",
+                "opciones": ["80°", "100°", "90°"],
+                "correcta": "80°",
+                "explicacion": "Suma total = 180°. 180 - (60 + 40) = 180 - 100 = 80°."
+            },
+            {
+                "pregunta": "Si un ángulo central mide 80°, ¿cuánto mide el arco que lo subtiende?",
+                "opciones": ["40°", "80°", "160°"],
+                "correcta": "80°",
+                "explicacion": "El ángulo central mide exactamente lo mismo que su arco."
+            },
+            {
+                "pregunta": "Si un arco mide 100°, ¿cuánto mide su ángulo inscrito?",
+                "opciones": ["50°", "100°", "200°"],
+                "correcta": "50°",
+                "explicacion": "El ángulo inscrito mide la MITAD del arco. 100 / 2 = 50°."
+            },
+            {
+                "pregunta": "Es la recta que toca a la circunferencia en un solo punto:",
+                "opciones": ["Secante", "Tangente", "Cuerda"],
+                "correcta": "Tangente",
+                "explicacion": "Por definición, la tangente solo toca un punto externo. La secante la corta en dos."
+            },
+            {
+                "pregunta": "Si los tres ángulos de un triángulo son iguales (equilátero), ¿cuánto mide cada uno?",
+                "opciones": ["60°", "90°", "45°"],
+                "correcta": "60°",
+                "explicacion": "180° dividido entre 3 ángulos iguales da 60°."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. Determina el valor de x si los ángulos de un triángulo son x, 2x y 3x.",
+                "opciones": ["30°", "60°", "90°"],
+                "correcta": "30°",
+                "explicacion": "x + 2x + 3x = 180 -> 6x = 180 -> x = 30."
+            },
+            {
+                "pregunta": "2. ¿Cómo se llama el segmento que une dos puntos de la circunferencia sin pasar necesariamente por el centro?",
+                "opciones": ["Radio", "Cuerda", "Diámetro"],
+                "correcta": "Cuerda",
+                "explicacion": "El diámetro es un caso especial de cuerda, pero la definición general es cuerda."
+            },
+            {
+                "pregunta": "3. Un ángulo inscrito mide 30°. ¿Cuánto mide el arco correspondiente?",
+                "opciones": ["15°", "30°", "60°"],
+                "correcta": "60°",
+                "explicacion": "El arco es el doble del ángulo inscrito. 30 * 2 = 60°."
+            },
+            {
+                "pregunta": "4. En un triángulo rectángulo, un ángulo agudo mide 35°. ¿Cuánto mide el otro agudo?",
+                "opciones": ["55°", "45°", "35°"],
+                "correcta": "55°",
+                "explicacion": "Ya tenemos 90°. Los otros dos deben sumar 90°. 90 - 35 = 55°."
+            },
+            {
+                "pregunta": "5. ¿Cuánto suman los ángulos alrededor del centro de un círculo?",
+                "opciones": ["180°", "360°", "270°"],
+                "correcta": "360°",
+                "explicacion": "Una vuelta completa equivale a 360 grados."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 16: DESIGUALDAD DEL TRIÁNGULO
+    # =================================================================
+    "sesion_16_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 16: Desigualdad del Triángulo",
+        "teoria": """
+        ### Regla de Construcción de Triángulos
+        No cualquier conjunto de tres líneas puede formar un triángulo. Para que se cierre la figura, debe cumplirse la **Desigualdad del Triángulo**:
+        
+        **"La suma de dos lados cualesquiera debe ser siempre MAYOR que el tercer lado."**
+        
+        * $a + b > c$
+        * $a + c > b$
+        * $b + c > a$
+        
+        *Ejemplo:* Lados 3, 4 y 10.
+        ¿3 + 4 > 10? No (7 no es mayor que 10). **No se puede formar triángulo.**
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "¿Es posible formar un triángulo con lados de 3, 4 y 5 cm?",
+                "opciones": ["Sí", "No"],
+                "correcta": "Sí",
+                "explicacion": "3+4=7 (>5), 3+5=8 (>4), 4+5=9 (>3). Cumple todas."
+            },
+            {
+                "pregunta": "¿Con qué medidas SÍ es posible trazar un triángulo?",
+                "opciones": ["13, 6, 5", "7, 7, 11", "1, 2, 5"],
+                "correcta": "7, 7, 11",
+                "explicacion": "A) 6+5=11 (no es mayor a 13). C) 1+2=3 (no es mayor a 5). B) 7+7=14 (>11), cumple."
+            },
+            {
+                "pregunta": "Si dos lados miden 12 y 25, ¿el tercer lado puede medir 10?",
+                "opciones": ["Sí", "No"],
+                "correcta": "No",
+                "explicacion": "10 + 12 = 22. 22 NO es mayor que 25. La figura no cerraría."
+            },
+            {
+                "pregunta": "Si dos lados miden 9 y 14 cm, el tercer lado puede medir:",
+                "opciones": ["3 cm", "25 cm", "10 cm"],
+                "correcta": "10 cm",
+                "explicacion": "Debe ser menor que la suma (9+14=23) y mayor que la resta (14-9=5). Solo 10 cumple."
+            },
+            {
+                "pregunta": "¿Es posible formar un triángulo con lados 2, 2 y 4?",
+                "opciones": ["Sí", "No"],
+                "correcta": "No",
+                "explicacion": "2 + 2 = 4. No es mayor que 4, es igual. Quedaría una línea plana, no un triángulo."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. ¿Con cuáles medidas NO se forma un triángulo?",
+                "opciones": ["10, 10, 10", "3, 4, 8", "6, 8, 10"],
+                "correcta": "3, 4, 8",
+                "explicacion": "3 + 4 = 7. 7 no es mayor que 8. Es imposible."
+            },
+            {
+                "pregunta": "2. Si dos lados miden 10 y 10, el tercero debe ser menor a:",
+                "opciones": ["10", "20", "15"],
+                "correcta": "20",
+                "explicacion": "La suma es 10+10=20. El tercer lado debe ser menor a esa suma."
+            },
+            {
+                "pregunta": "3. ¿Se puede formar un triángulo con medidas 9, 11 y 4?",
+                "opciones": ["Sí", "No"],
+                "correcta": "Sí",
+                "explicacion": "4+9=13 (>11). Cumple la condición de que la suma de los pequeños supere al grande."
+            },
+            {
+                "pregunta": "4. Condición para que exista el triángulo:",
+                "opciones": ["a + b = c", "a + b > c", "a + b < c"],
+                "correcta": "a + b > c",
+                "explicacion": "La suma de dos lados siempre debe superar al tercero."
+            },
+            {
+                "pregunta": "5. ¿Qué pasa si la suma de dos lados es igual al tercero?",
+                "opciones": ["Se forma un triángulo plano", "Son líneas coincidentes (no hay triángulo)", "Es un triángulo rectángulo"],
+                "correcta": "Son líneas coincidentes (no hay triángulo)",
+                "explicacion": "Los lados se acostarían sobre el lado mayor formando una sola línea."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 17: PROBABILIDAD Y ESTADÍSTICA
+    # =================================================================
+    "sesion_17_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 17: Probabilidad y Estadística",
+        "teoria": """
+        ### Estadística Básica
+        * **Media (Promedio):** Suma de todos los datos dividida entre la cantidad de datos.
+        * **Mediana:** El dato que queda justo en el centro al ordenarlos de menor a mayor.
+        * **Moda:** El dato que más se repite.
+
+        ### Probabilidad
+        Mide qué tan posible es que ocurra un evento.
+        * **Fórmula:** $P(A) = \\frac{\\text{Casos Favorables}}{\\text{Casos Totales}}$
+        * **Espacio Muestral:** Conjunto de todos los resultados posibles (Ej. en un dado: {1,2,3,4,5,6}).
+        * **Aleatorio vs Determinista:** Aleatorio es azar (lanzar moneda), Determinista es seguro (calentar agua hierve).
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "Calcula el promedio (media) de: 5, 6, 7, 7, 8, 9",
+                "opciones": ["6", "7", "8"],
+                "correcta": "7",
+                "explicacion": "Suma: 5+6+7+7+8+9 = 42. Total de datos: 6. 42 / 6 = 7."
+            },
+            {
+                "pregunta": "En el lanzamiento de un dado, ¿cuál es la probabilidad de que salga un número par?",
+                "opciones": ["1/2", "1/6", "2/3"],
+                "correcta": "1/2",
+                "explicacion": "Casos totales: 6 (1,2,3,4,5,6). Pares: 3 (2,4,6). Probabilidad: 3/6 = 1/2."
+            },
+            {
+                "pregunta": "Encuentra la mediana de: 2, 5, 8, 9, 10",
+                "opciones": ["5", "8", "9"],
+                "correcta": "8",
+                "explicacion": "Ordenados quedan 2, 5, **8**, 9, 10. El centro es 8."
+            },
+            {
+                "pregunta": "Señala un experimento aleatorio:",
+                "opciones": ["Saber a qué hora amanece", "Ganar la lotería", "Calcular el área de un cuadrado"],
+                "correcta": "Ganar la lotería",
+                "explicacion": "Depende del azar. Los otros tienen resultados fijos o calculables."
+            },
+            {
+                "pregunta": "Calcula la moda de: 3, 5, 2, 3, 7, 3, 8",
+                "opciones": ["3", "5", "7"],
+                "correcta": "3",
+                "explicacion": "El 3 se repite tres veces, más que cualquier otro."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. Espacio muestral de lanzar una moneda:",
+                "opciones": ["{Águila}", "{Sol}", "{Águila, Sol}"],
+                "correcta": "{Águila, Sol}",
+                "explicacion": "Son los dos únicos resultados posibles."
+            },
+            {
+                "pregunta": "2. Probabilidad de sacar una bola roja de una urna con 3 rojas y 7 azules.",
+                "opciones": ["3/7", "3/10", "7/10"],
+                "correcta": "3/10",
+                "explicacion": "Favorables: 3. Totales: 3+7=10. Resultado: 3/10."
+            },
+            {
+                "pregunta": "3. Promedio de calificaciones: 10, 8, 9, 9, 10, 8",
+                "opciones": ["9", "8.5", "9.5"],
+                "correcta": "9",
+                "explicacion": "Suma=54. Datos=6. 54/6 = 9."
+            },
+            {
+                "pregunta": "4. Mediana de: 1, 2, 100",
+                "opciones": ["2", "51", "100"],
+                "correcta": "2",
+                "explicacion": "El dato central es 2."
+            },
+            {
+                "pregunta": "5. Si P(A) = 0, el evento es:",
+                "opciones": ["Seguro", "Posible", "Imposible"],
+                "correcta": "Imposible",
+                "explicacion": "Probabilidad cero significa que nunca ocurrirá."
+            }
+        ]
+    },
+
+    # =================================================================
+    # SESIÓN 18: SUCESIONES
+    # =================================================================
+    "sesion_18_mat": {
+        "titulo": "Pensamiento Matemático - Sesión 18: Progresiones",
+        "teoria": """
+        ### Sucesiones o Progresiones
+        Son conjuntos de números ordenados que siguen una regla.
+        
+        **1. Progresión Aritmética:**
+        * Cada término se obtiene **sumando** una cantidad fija llamada diferencia ($d$) al anterior.
+        * Fórmula: $a_n = a_1 + (n-1)d$
+        * Ejemplo: 2, 5, 8, 11... (Va sumando 3).
+        
+        **2. Progresión Geométrica:**
+        * Cada término se obtiene **multiplicando** por una cantidad fija llamada razón ($r$).
+        * Fórmula: $a_n = a_1 \cdot r^{n-1}$
+        * Ejemplo: 3, 6, 12, 24... (Se multiplica por 2).
+        """,
+        "ejercicios": [
+            {
+                "pregunta": "¿Qué número sigue en la sucesión: 15, 11, 7, 3...?",
+                "opciones": ["0", "-1", "1"],
+                "correcta": "-1",
+                "explicacion": "La regla es restar 4. 3 - 4 = -1."
+            },
+            {
+                "pregunta": "¿Qué número sigue en la sucesión geométrica: 3, 15, 75, 375...?",
+                "opciones": ["1875", "450", "1125"],
+                "correcta": "1875",
+                "explicacion": "La razón es multiplicar por 5. 375 * 5 = 1875."
+            },
+            {
+                "pregunta": "En la sucesión aritmética 5, 13, 21, 29... ¿Cuál es la diferencia (d)?",
+                "opciones": ["5", "8", "6"],
+                "correcta": "8",
+                "explicacion": "13 - 5 = 8. 21 - 13 = 8. La diferencia es 8."
+            },
+            {
+                "pregunta": "¿Cuál es el décimo término de la sucesión 7, 15, 23, 31...?",
+                "opciones": ["71", "79", "87"],
+                "correcta": "79",
+                "explicacion": "Formula: a10 = 7 + (10-1)(8) = 7 + 9*8 = 7 + 72 = 79."
+            },
+            {
+                "pregunta": "Suma de los primeros 10 términos de: 1, 5, 9, 13...",
+                "opciones": ["190", "176", "200"],
+                "correcta": "190",
+                "explicacion": "a10 = 1 + 9(4) = 37. Suma = n(a1+an)/2 = 10(1+37)/2 = 10(38)/2 = 190."
+            },
+            # --- TAREA Y REPASO ---
+            {
+                "pregunta": "1. ¿Qué número sigue en: 2, 4, 8, 16...?",
+                "opciones": ["24", "32", "20"],
+                "correcta": "32",
+                "explicacion": "Es geométrica por 2. 16 * 2 = 32."
+            },
+            {
+                "pregunta": "2. ¿Qué número sigue en: 52, 46, 40, 34...?",
+                "opciones": ["30", "28", "26"],
+                "correcta": "28",
+                "explicacion": "Va restando 6. 34 - 6 = 28."
+            },
+            {
+                "pregunta": "3. En la sucesión 29, 36, 43, 50... el término 10 es:",
+                "opciones": ["92", "99", "85"],
+                "correcta": "92",
+                "explicacion": "a1=29, d=7. a10 = 29 + 9(7) = 29 + 63 = 92."
+            },
+            {
+                "pregunta": "4. Sigue la serie: -1, -7, -13, -19...",
+                "opciones": ["-20", "-25", "-21"],
+                "correcta": "-25",
+                "explicacion": "Resta 6 cada vez. -19 - 6 = -25."
+            },
+            {
+                "pregunta": "5. ¿Qué número sigue en la sucesión 13, 26, 52, 104...?",
+                "opciones": ["208", "156", "200"],
+                "correcta": "208",
+                "explicacion": "Es el doble del anterior. 104 * 2 = 208."
+            }
+        ]
     }
     # COPIA Y PEGA AQUÍ LAS DEMÁS SESIONES
 }
@@ -1199,6 +1690,7 @@ def mostrar_sesion_estudio(uid, sesion_key):
 
 if __name__ == "__main__":
     main()
+
 
 
 
